@@ -18,10 +18,7 @@ abstract class Bosszuallo implements Szuperhos{
 
     @Override
     public boolean legyoziE(Szuperhos szuperhos) {
-        if (this.mekkoraAzEreje() > szuperhos.mekkoraAzEreje()){
-            return true;
-        }
-        return false;
+        return this.mekkoraAzEreje() > szuperhos.mekkoraAzEreje();
     }
 
     public void setSzuperero(double szuperero) {
@@ -36,12 +33,12 @@ abstract class Bosszuallo implements Szuperhos{
         this.vanEGyengesege = vanEGyengesege;
     }
 
-    public boolean getVanEgyengesege() {
+    public boolean isVanEGyengesege() {
         return vanEGyengesege;
     }
 
     @Override
     public String toString() {
-        return String.format("Szupererő: %2.f; %s", szuperero, ((vanEGyengesege) ? "van gyengesége" : "nincs gyengesége")) ;
+        return String.format("Szupererő: %f; %s", szuperero, ((vanEGyengesege) ? "van gyengesége" : "nincs gyengesége")) ;
     }
 }
